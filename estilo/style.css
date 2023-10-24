@@ -1,0 +1,292 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Happy Monkey', sans-serif;
+    background-color: #95c1c3;
+}
+
+.clear{
+    clear: both;
+}
+
+/* AQUI COMEÇA O ESTILO DO INDEX.PHP */
+
+.conteiner{
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.conteiner img{
+    width: 90%;
+
+}
+
+.conteiner h2{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    background-color: transparent;
+    font-size: 50px;
+    color: #805c4b;
+}
+
+.conteiner p{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    background-color: transparent;
+    font-size: 20px;
+    color: #805c4b;
+}
+
+.btn{
+    padding: 0 5%;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.btn-single{
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 15px;
+    display: inline-block;
+    width: 300px;
+    background-color: #805c4b;
+}
+
+.btn-single h2{
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.btn-single a{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 14px 20px;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 680px){
+    .conteiner{
+        margin: 60px auto;
+    }
+    .conteiner img{
+        width: 99%;
+    }
+    .conteiner h2{
+        font-size: 30px;
+    }
+
+    .conteiner p{
+        font-size: 15px;
+    }
+    .btn{
+        margin-top: -60px;
+    }
+
+    .btn-single{
+        margin: 10px auto;
+        display: block;
+        width: 200px;
+    }
+
+    .btn-single h2{
+        font-size: 18px;
+    }
+}
+
+/* AQUI COMEÇA O ESTILO DO CADASTRO.PHP */
+.conteiner-cadastro{
+    position: relative;
+    text-align: center;
+    margin: 100px auto;
+    max-width: 1400px;
+}
+.space{
+    width: 98%;
+}
+
+.livro{
+    position: absolute;
+    left: 40px;
+    top: 0;
+    width: 35%;
+    height: 500px;
+    background-color: #ffffef;
+    border-radius: 20px;
+    padding: 80px 2%;
+    box-shadow: -10px 0px 0px 0px #4a7557;
+}
+
+.livro h2.title1{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    max-width: 200px;
+    color: white;
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #ca6e3f;
+}
+
+.livro h2.title2{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    max-width: 250px;
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: #ca6e3f;
+}
+
+.livro input[type=text]{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    max-width: 98%;
+    width: 300px;
+    padding-left: 5px;
+    height: 60px;
+    border: 0;
+    border-radius: 20px;
+    background-color: #4a7557;
+    color: white;
+    margin-top: 90px;
+}
+
+.livro input[type=text]::placeholder{
+    color: white;
+    padding-left: 15px;
+    font-size: 20px;
+}
+
+
+
+.resenha{
+    position: relative;
+    float: right;
+    width: 55%;
+    height: 500px;
+    background-color: #ffffef;
+    border-radius: 20px;
+    box-shadow: -10px 0px 0px 0px #4a7557;
+}
+.resenha h2{
+    position: absolute;
+    margin: 50px 80px;
+    max-width: 200px;
+    color: white;
+    font-size: 25px;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: #ca6e3f;
+}
+
+.resenha textarea{
+    max-width: 80%;
+    max-height: 250px;
+    min-height: 250px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    min-width: 80%;
+    height: 400px;
+    color: black;
+    padding: 15px;
+    font-size: 20px;
+    border: 3px dotted #4a7557;
+    border-radius: 15px;
+    background-color: #ffffef;
+}
+
+.resenha input[type=submit]{
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+    display: block;
+    cursor: pointer;
+    max-width: 95%;
+    width: 230px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 0;
+    color: white;
+    background-color: #4a7557;
+}
+.rating {
+    position: absolute;
+    left: 50%;
+    top: 75%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    display: inline-block;
+    background-color: transparent;
+    max-width: 98%;
+}
+
+.star-radio {
+    display: none;
+}
+
+.star-label {
+    background-color: transparent;
+    font-size: 40px;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.star-radio:checked + .star-label,
+.star-radio:checked ~ .star-label {
+    color: #f0d800; /* Cor das estrelas selecionadas */
+}
+
+.star-radio:not(:checked) ~ .star-label {
+    color: #ddd; /* Cor das estrelas não selecionadas */
+}
+
+@media screen and (max-width: 1060px){
+    .livro{
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        width: 60%;
+        left: 0;
+    }
+    .livro input[type=text]{
+        max-width: 80%;
+    }
+
+    .rating{
+        margin-top: 30px;
+    }
+    .resenha{
+        text-align: center;
+        position: relative;
+        display: block;
+        width: 74%;
+        margin: 0 auto;
+        margin-top: 50px;
+        float: none;
+    }
+    .resenha input[type=submit]{
+        left: 30px;
+    }
+
+}
