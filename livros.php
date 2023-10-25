@@ -15,7 +15,6 @@
      $sql->execute();
      $result = $sql->get_result();
      $info = $result->fetch_all(MYSQLI_ASSOC);
-    
     ?>
 <html>
     <head>
@@ -39,9 +38,10 @@
             foreach ($info as $key => $value) {
                 echo 
                 '<div class="livro-single">
-                <h2><a>'.$value['nome'].'</a></h2>';
+                <h2><a href="livrosingle.php?id='.$value['id'].'">'.$value['nome'].'</a></h2>';
                 echo '<p>- '.$value['autor'].'</p>';
-                for($i = 0; $i<5; $i++){
+                echo '<p>ID: '.$value['id'].'</p>';
+                for($i = 1; $i<6; $i++){
                     if($value['avaliacao'] >= $i){
                         echo '<label for="star" class="star" style="color:#ca6e3f; font-size:34px;">&#9733;</label>';
                     }else{

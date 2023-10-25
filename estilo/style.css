@@ -104,10 +104,29 @@
 }
 
 /* AQUI COMEÇA O ESTILO DO CADASTRO.PHP */
+
+i.seta-cadastro{
+    font-size: 40px;
+    color: #ca6e3f;
+    position: absolute;
+    top: 2%;
+    left: 3%;
+    z-index: 999;
+}
+
+.sucesso h2{
+    top: 4%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%);
+    font-size: 24px;
+    color: white;
+}
 .conteiner-cadastro{
     position: relative;
     text-align: center;
-    margin: 100px auto;
+    margin: 65px auto;
     max-width: 1400px;
 }
 .space{
@@ -189,7 +208,8 @@
 }
 .resenha h2{
     position: absolute;
-    margin: 40px 80px;
+    top: 20px;
+    left: 10%;
     max-width: 200px;
     color: white;
     font-size: 25px;
@@ -218,21 +238,17 @@
 }
 
 .resenha input[type=text]{
+    top: 70%;
+    left: 10%;
+    width: 200px;
     font-size: 20px;
     position: absolute;
-    top: 55%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%,-50%);
-    max-width: 98%;
-    width: 300px;
     padding-left: 5px;
-    height: 55px;
+    height: 50px;
     border: 0;
     border-radius: 20px;
     background-color: #4a7557;
     color: white;
-    margin-top: 90px;
 }
 .resenha input[type=text]::placeholder{
     padding: 5px;
@@ -243,7 +259,7 @@
 .resenha input[type=submit]{
     position: absolute;
     bottom: 30px;
-    left: 80px;
+    left: 10%;
     display: block;
     cursor: pointer;
     max-width: 95%;
@@ -309,10 +325,6 @@
         margin-top: 50px;
         float: none;
     }
-    .resenha input[type=submit]{
-        left: 30px;
-    }
-
 }
 
 /** AQUI COMEÇA O ESTILO DA PAGINAÇÃO DE LIVROS **/
@@ -359,6 +371,11 @@
     margin-top: 20px;
 }
 
+.conteiner-livros a{
+    color: white;
+    text-decoration: none;
+}
+
 .conteiner-livros{
     display: block;
     position: relative;
@@ -377,4 +394,60 @@
     text-align: center;
     border-right: 1px dashed white;
     border-bottom: 1px dashed white;
+}
+
+@media screen and (max-width:780px){
+    .header{
+        height: 160px;
+    }
+    .header h2{
+        top: 32%;
+        max-width: 90%;
+        font-size: 24px;
+    }
+    .header p{
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .livro-single{
+        margin: 10px 5%;
+        width: 90%;
+    }
+}
+
+/** AQUI COMEÇA O ESTILO DA PAGINA LIVROSINGLE **/
+.descricao{
+    position: relative;
+    margin: 50px auto;
+    max-width: 1000px;
+    width: 75%;
+    border: 2px dashed white;
+}
+
+i.seta-livro-single{
+    position:fixed; 
+    left:70px; 
+    bottom:20px; 
+    transform: translate(-50%, -50%);  
+    background-color: transparent;
+    display: block;
+    font-size: 40px;
+    color: #ca6e3f;
+}
+.descricao p{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    word-wrap: break-word;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1000px){
+    i.seta-livro-single{
+        left:30px; 
+        bottom:8px; 
+        font-size: 30px;
+    }
 }

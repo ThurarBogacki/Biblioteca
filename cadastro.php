@@ -16,11 +16,15 @@
            if(isset($_POST['acao'])){
                 $nome = $_POST['livro'];
                 $autor = $_POST['autor'];
-                $avaliacao = $_POST['star'];
+                if(isset($_POST['star'])){
+                    $avaliacao = $_POST['star'];
+                }else{
+                    $avaliacao = 0;
+                }
                 $resenha = $_POST['resenha'];
                 $sql = "INSERT INTO livros (nome, autor, resenha, avaliacao) VALUES ('$nome', '$autor','$resenha','$avaliacao')";
                 if ($conn->query($sql) === TRUE) {
-                    echo "Registro inserido com sucesso!";
+                    echo '<div class="sucesso"><h2>Livro Inserido com Sucesso</h2></div>';
                     } else {
                     echo "Erro: " . $sql . "<br>" . $conn->error;
                 }
@@ -30,6 +34,7 @@
             ?>
         <head>
             <title>Cadastro</title>
+            <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -38,6 +43,7 @@
             <link href="estilo/style.css" rel="stylesheet">
         </head>
     <body>
+    <a href="index.php"><i class="fa-solid fa-left-long seta-cadastro"></i></a>
         <div class="conteiner-cadastro">
             <div class="space">
             <form method="post">
