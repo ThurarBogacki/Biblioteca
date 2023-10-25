@@ -1,5 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html>  
+        <?php
+            // Conectar ao banco de dados
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "biblioteca";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conn->connect_error) {
+                die("Conexão com o banco de dados falhou: " . $conn->connect_error);
+            }
+
+           if(isset($_POST['acao'])){
+                $nome = $_POST['livro'];
+                $autor = $_POST['autor'];
+                $avaliacao = $_POST['star'];
+                $resenha = $_POST['resenha'];
+                $sql = "INSERT INTO livros (nome, autor, resenha, avaliacao) VALUES ('$nome', '$autor','$resenha','$avaliacao')";
+                if ($conn->query($sql) === TRUE) {
+                    echo "Registro inserido com sucesso!";
+                    } else {
+                    echo "Erro: " . $sql . "<br>" . $conn->error;
+                }
+           } 
+
+            $conn->close();
+            ?>
         <head>
             <title>Cadastro</title>
             <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +62,7 @@
                 <div class="resenha">
                     <h2>Resenha</h2>
                     <textarea name="resenha"></textarea>
+                    <input type="text" placeholder="Nome do Autor" name="autor">
                     <input type="submit" value="Enviar" name="acao">
                 </div><!--resenha-->
             </form>

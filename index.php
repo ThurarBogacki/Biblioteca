@@ -20,7 +20,7 @@
             </div><!---conteiner-->
             <div class="btn">
                 <div class="btn-single">
-                    <h2><a>Ver Livros</a></h2>
+                    <h2><a href="livros.php">Ver Livros</a></h2>
                 </div>
                 <div class="btn-single">
                     <h2><a href="cadastro.php">Cadastrar Livros</a></h2>
