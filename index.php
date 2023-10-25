@@ -15,7 +15,7 @@
         <body>  
             <div class="conteiner">
                 <img src="imagens/img-principal.png">
-                <h2>BIBLIOTECA </h2>
+                <h2>BIBLIOTECA</h2>
                 <p>A Rede Social dos Leitores</p>
             </div><!---conteiner-->
             <div class="btn">
