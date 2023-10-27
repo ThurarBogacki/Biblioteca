@@ -19,6 +19,7 @@
 <html>
     <head>
         <title>Livros</title>
+        <link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -48,6 +49,10 @@
                         echo '<label for="star" class="star" style="color:#ccc; font-size:34px;">&#9733;</label>';
                     }
                 }
+                echo    '<form action="delete.php" method="post">
+                            <input type="hidden" name="row_id" value="'.$value['id'].'">
+                            <button type="submit" name="excluir"><i class="fa-solid fa-trash"></i></button>
+                        </form>';
                 echo '</div><!--livro-single-->';
             }
             ?>
