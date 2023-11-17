@@ -7,30 +7,42 @@
             $password = "";
             $dbname = "biblioteca";
 
-            $conn = new mysqli($servername, $username, $password, $dbname);
+            $conn = new mysqli($servername, $username, $password, $dbname); //CONECTA COM BANCO DE DADOS
 
             if ($conn->connect_error) {
                 die("Conexão com o banco de dados falhou: " . $conn->connect_error);
-            }
+            } // SE A CONEXAO FALHAR RETORNA FALHA
 
-           if(isset($_POST['acao'])){
-                $nome = $_POST['livro'];
-                $autor = $_POST['autor'];
-                if(isset($_POST['star'])){
-                    $avaliacao = $_POST['star'];
+           if(isset($_POST['acao'])){ // SE EXISTIR O POST AÇÃO ALGUEM CLICOU EM ENVIAR O FORMULARIO
+                $nome = $_POST['livro']; // SALVA NA VARIAVEL $NOME O QUE TIVER NO INPUT NAME=LIVRO
+                $autor = $_POST['autor']; // SALVA NA VARIAVEL $AUTOR O QUE TIVER NO INPUT NAME=AUTOR
+                if(isset($_POST['star'])){ // SE EXISTIR ESTRELINHAS MARCADAS 
+                    $avaliacao = $_POST['star']; // SALVA EM AVALIACAO AS ESTRELAS
                 }else{
-                    $avaliacao = 0;
+                    $avaliacao = 0; // SE NAO A NOTA DE ESTRELAS É 0
                 }
-                $resenha = $_POST['resenha'];
+                $resenha = $_POST['resenha']; // SALVA NA VARIAVEL $RESENHA O QUE TIVER NO INPUT NAME=RESENHA
+
+                //INSERE NA TABELA "LIVROS" (nome,autor,resenha,avaliacao) OS VALORES DAS VARIAVEIS $NOME,$AUTOR,$RESENHA.....
                 $sql = "INSERT INTO livros (nome, autor, resenha, avaliacao) VALUES ('$nome', '$autor','$resenha','$avaliacao')";
-                if ($conn->query($sql) === TRUE) {
-                    echo '<div class="sucesso"><h2>Livro Inserido com Sucesso</h2></div>';
+                if ($conn->query($sql) === TRUE) { //SE SALVOU COM SUCESSO
+                    echo '<div class="sucesso"><h2>Livro Inserido com Sucesso</h2></div>'; // PRINTA HTML
                     } else {
-                    echo "Erro: " . $sql . "<br>" . $conn->error;
+                    echo "Erro: " . $sql . "<br>" . $conn->error; // SE NAO PRINTA ERRO
                 }
            } 
 
-            $conn->close();
+            $conn->close(); // FECHA CONEXÃO COM BANCO DE DADOS
+
+            /* AGORA SÓ USAR O  foreach ($info as $key => $value)(UM FOR QUE PERCORRE TABELAS DO BANCO DE DADOS) PRA PERCORRER A TABELA DO BANCO DE DADOS 
+            E VERIFICAR SE EXISTE EM ALGUM LUGAR USER E PASS == AO DADO PELO USUARIO, SE EXISTIR LOGIN COM
+            EX:
+            $USER = $_POST['USER'];
+            $SENHA = $_POST['SENHA'];
+            IF($VALUE["USER"] == $USER && $VALUE["SENHA"] == $SENHA){
+                LOGADO COM SUCESSO;
+            }
+             */
             ?>
         <head>
             <title>Cadastro</title>
