@@ -34,15 +34,6 @@
 
             $conn->close(); // FECHA CONEXÃO COM BANCO DE DADOS
 
-            /* AGORA SÓ USAR O  foreach ($info as $key => $value)(UM FOR QUE PERCORRE TABELAS DO BANCO DE DADOS) PRA PERCORRER A TABELA DO BANCO DE DADOS 
-            E VERIFICAR SE EXISTE EM ALGUM LUGAR USER E PASS == AO DADO PELO USUARIO, SE EXISTIR LOGIN COM
-            EX:
-            $USER = $_POST['USER'];
-            $SENHA = $_POST['SENHA'];
-            IF($VALUE["USER"] == $USER && $VALUE["SENHA"] == $SENHA){
-                LOGADO COM SUCESSO;
-            }
-             */
             ?>
         <head>
             <title>Cadastro</title>
